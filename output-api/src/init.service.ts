@@ -76,8 +76,8 @@ export class InitService {
 
         let config: Config[] = [
             { key: 'reporting_year', value: 2025},
-            { key: 'institution', value: 'Output Development Version' },
-            { key: 'institution_short_label', value: 'Dev' },
+            { key: 'institution', value: 'Technische Hochschule Wildau' },
+            { key: 'institution_short_label', value: 'TH Wildau' },
             { key: 'lock_timeout', value: 5 },
         ]
 
