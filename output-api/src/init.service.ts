@@ -108,27 +108,27 @@ export class InitService {
     }
 
     async addPubType() {
-        let pt = { label: 'Konferenzbeitrag: Paper', review: true };
+        let pt = { label: 'Konferenzbeitrag / Paper', review: true };
         pt = await this.publicationTypeRepository.save(pt);
         let alias = ["proceeding"];
         await this.aliasPubType.save(alias.map(a => { return { element: pt, alias: a } }))
 
-        pt = { label: 'Artikel Journalartikel', review: true };
+        pt = { label: 'Artikel / Journalartikel', review: true };
         pt = await this.publicationTypeRepository.save(pt);
         alias = ["article", "letter", "erratum"];
         await this.aliasPubType.save(alias.map(a => { return { element: pt, alias: a } }))
 
-        pt = { label: 'Artikel Sammelbandbeitrag', review: true };
+        pt = { label: 'Sammelbandbeitrag', review: true };
         pt = await this.publicationTypeRepository.save(pt);
         alias = ["chapter", "inbook"];
         await this.aliasPubType.save(alias.map(a => { return { element: pt, alias: a } }))
 
-        pt = { label: 'Buch Monografie', review: false };
+        pt = { label: 'Monographie', review: false };
         pt = await this.publicationTypeRepository.save(pt);
         alias = ["book", "monograph"];
         await this.aliasPubType.save(alias.map(a => { return { element: pt, alias: a } }))
 
-        pt = { label: 'Buch Dissertation', review: true };
+        pt = { label: 'Dissertation', review: true };
         pt = await this.publicationTypeRepository.save(pt);
         alias = ["dissertation", "phdthesis", "habilitation"];
         await this.aliasPubType.save(alias.map(a => { return { element: pt, alias: a } }))
@@ -148,22 +148,25 @@ export class InitService {
         alias = ["dataset","case reports"];
         await this.aliasPubType.save(alias.map(a => { return { element: pt, alias: a } }))
 
-        pt = { label: 'Artikel Preprint', review: false };
+        pt = { label: 'Preprint', review: false };
         pt = await this.publicationTypeRepository.save(pt);
         alias = ["preprint","manuscript"];
         await this.aliasPubType.save(alias.map(a => { return { element: pt, alias: a } }))
 
-        const article: PublicationType[] = [
-            { label: 'Buch Sammelband', review: false },
-            { label: 'Buch Konferenzband', review: false },
-            { label: 'Konferenzbeitrag: Poster', review: true },
-            { label: 'Konferenzbeitrag: Präsentation', review: false },
-            { label: 'Konferenzbeitrag: Meeting Abstract', review: false },
+        let article: PublicationType[] = [
+            { label: 'Sammelband', review: false },
+            { label: 'Konferenzband', review: false },
+            { label: 'Konferenzbeitrag / Poster', review: true },
+            { label: 'Wissenschaftliche Vortragsfolien', review: false },//
+            { label: 'Konferenzbeitrag / Meeting Abstract', review: false },
             { label: 'Beitrag in nicht-wissenschaftlichen Medien', review: true },
             { label: 'Beitrag in wissenschaftlichen Blogs', review: false },
             { label: 'Integrierende Ressourcen', review: false },
             { label: 'Sonstige Publikationen', review: false },
-            { label: 'nicht ermittelbar', review: null }
+            { label: 'nicht ermittelbar', review: null },
+            { label: 'Artikel / Review', review: null },
+            { label: 'Artikel / Rezension', review: null },
+            { label: 'Artikel / Editorial', review: null }
         ]
         await this.publicationTypeRepository.save(article);
     }

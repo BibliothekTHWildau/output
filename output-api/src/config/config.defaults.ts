@@ -2,31 +2,26 @@ import { ConfigScope } from './Config.entity';
 
 export const CONFIG_DEFAULTS = {
     reporting_year: 2025,
-    institution: "Otto-von-Guericke-Universität Magdeburg",
-    institution_short_label: "OVGU",
+    institution: "Technische Hochschule Wildau",
+    institution_short_label: "TH Wildau",
     search_tags: [
-        "magdeburg",
-        "ovgu",
-        "guericke"
+        "wildau",
+        "th wildau"
     ],
     lock_timeout: 5,
     affiliation_tags: [
-        "ovgu",
-        "guericke",
-        "universität magdeburg",
-        "university magdeburg",
-        "universitätsklinikum magdeburg",
-        "uniklinikum magdeburg",
-        "universitätsklinik magdeburg",
-        "university of magdeburg",
-        "uniklinik magdeburg",
-        "universitätsfrauenklinik magdeburg",
-        "unifrauenklinik magdeburg",
-        "university hospital magdeburg",
-        "universitätsmedizin magdeburg"
+        "technische hochschule wildau",
+        "technical university of applied sciences wildau",
+        "th wildau",
+        "technical university wildau",
+        "tuas wildau",
+        "university of applied sciences wildau",
+        "uas wildau",
+        "wildau university of applied sciences",
+        "wildau technical university of applied sciences"
     ],
-    ror_id: "https://ror.org/xxxxx",
-    openalex_id: "xxxxx",
+    ror_id: "https://ror.org/00k62pe27",
+    openalex_id: "I38517508",
     doi_import_service: 'openalex',
     optional_fields: {
       abstract: false,
