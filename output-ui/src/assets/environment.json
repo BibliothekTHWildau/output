@@ -1,9 +1,9 @@
 {
     "authorization_service": "cookie",
     "api": "api/",
-    "auth_ui": "",
-    "auth_api": "",
-    "security": false,
-    "self": "127.0.0.1:4200/",
+    "auth_ui": "http://localhost:3000",
+    "auth_api": "http://localhost:3000/",
+    "security": true,
+    "self": "localhost:4200",
     "theme": "azure"
 }
